@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nuxt-deployment
+  labels:
+    app: nuxt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nuxt
+  template:
+    metadata:
+      labels:
+        app: nuxt
+    spec:
+      containers:
+        - name: nuxt
+          image: kenfdev/multiarch-nuxt
+          ports:
+            - containerPort: 5000
