@@ -36,7 +36,7 @@ docker_tag_all () {
 
 docker_build "node:10-alpine" "${_docker_repo}:${_app_version}"
 docker_build "arm32v7/node:12" "${_docker_repo}-linux-arm32v7:${_app_version}"
-# docker_build "arm64v8/node:10-alpine" "${_docker_repo}-linux-arm64v8:${_app_version}"
+# docker_build "arm64v8/node:12" "${_docker_repo}-linux-arm64v8:${_app_version}"
 
 # Tag as 'latest' for official release; otherwise tag as kenfdev/multiarch-nuxt:master
 if echo "$_image_tag" | grep -q "^v"; then
